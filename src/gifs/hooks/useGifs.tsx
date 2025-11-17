@@ -28,7 +28,7 @@ export const useGifs = () => {
             return
         };
         
-        setPreviousSearchTerms([query, ...previousSearchTerms].splice(0, 8))
+        setPreviousSearchTerms( previousSearchTerms => [query, ...previousSearchTerms].splice(0, 8))
         const gifs = await getGifsByQuery(query);
         setGifs(gifs);
 
